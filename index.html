@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>My Site</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <div>
+        <header class="header">
+            <div class='d2'>
+                <div class="d3">
+                    <a title="Open Menu" role="button" class="active" href="javascript:Menu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="d6">
+                <a href="index.html">
+                    <div class="d61">
+                    </div>
+                    <div class="d61 d62">
+                    </div>
+                </a>
+            </div>
+            <div class="d7">
+                <div class="d71">
+                    <button title="Open User Menu" role="button" class="userMenu" onclick="javascript:UserMenu()">
+                        <nav class="UNavi" role="navigation" title="User Menu">
+                            <!-- TODO unnest anchor tags -->
+                            <a class="" href="/UserMenu1">UserMenu1</a>
+                            <a class="" href="/UserMenu2">UserMenu2</a>
+                        </nav>
+                    </button>
+                </div>
+            </div>
+            <div class="d8"></div>
+            <div class="d9"></div>
+        </header>
+
+        <nav role="navigation" title="Site" class="navi">
+            <div class="d91">
+                <div class="d10">
+                    <form action="#" class="search" role="search">
+                        <button type="submit" role="button" title="Submit"></button>
+                        <input autocomplete="off" enterkeyhint="search" name="q" placeholder="Search ERA" value="" />
+                    </form>
+                </div>
+                <div class="options" role="button" tabindex="0">
+                    <a class="" href="/newsfeed">Newsfeed</a>
+                    <a class="" href="/features">Features</a>
+                    <a class="" href="/menu3">Menu3</a>
+                    <a class="" href="/menu4">Menu4</a>
+                </div>
+            </div>
+        </nav>
+
+        <div aria-label="Close Nav" class="closeNav" role="button" onclick="javascript:closeNav()">
+
+        </div>
+
+        <main role="main" class="main">
+            <div class="d11">
+                <section class="mainSection">
+                    <div class="d12 d12a" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                        <div class="d13" style="transform: translateX(calc(0% + 0px));">
+                            <a role="link" title="Initial Pic" class="caro" href="">
+                                <div class="a1 ab" style="background: url('images/Background.jpg') center center / cover; "></div>
+                            </a>
+                            <a role="link" title="Initial Pic" class="caro" href="">
+                                <div class="a1 ab" style="background: url('images/Pixie1.jpg') center center / cover; "></div>
+                            </a>
+                            <a role="link" title="Initial Pic" class="caro" href="">
+                                <div class="a1 ab" style="background: url('images/Pixie2.jpg') center center / cover; "></div>
+                            </a>
+                            <a role="link" title="Initial Pic" class="caro" href="">
+                                <div class="a1 ab" style="background: url('images/Pixie3.jpg') center center / cover; "></div>
+                            </a>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="d14">
+                            <a role="link" title="Initial Pic" class="caro" href="">
+                                <div class="d15 Selected"><!-- TODO Selected functionality -->
+                                    <div class="d16">
+                                        <div class="d161">Tester Div</div>
+                                        <h2 class="h1">Big tester div</h2>
+                                    </div>
+                                    <button class="d15button d15buttona"> Preview Here</button>
+                                </div>
+                               </a>
+                        </div>
+                            <div class="d17">
+                                <button class="button Selected"></button>
+                                <button class="button2"></button>
+                            </div>
+                    </footer>
+                </section>
+                <!-- Main grid
+                <div class="d18">
+                    <section class="s1">
+                        <h3 class="h2">
+                            <a href="#">News</a>
+                        </h3>
+                        <div class="d19">
+                            <a href="#" class="a2">content</a>
+                        </div>
+                    </section>
+                </div>
+                    -->
+            </div>
+        </main>
+        <footer role="navigation" title="Footer" class="footerBot">
+            <div class="d20">
+                <div class="d21">
+                    <button type="button">
+                        <i>
+                        </i>
+                        <span>
+                            English
+                        </span>
+                    </button>
+                    <div class="d22">
+                        <div class="d23">
+                            <a href="#" target="_self">English</a>
+                            <a href="#" target="_self">German</a>
+                            <a href="#" target="_self">French</a>
+                            <a href="#" target="_self">Dutch</a>
+                            <a href="#" target="_self">Spanish</a>
+                            <a href="#" target="_self">Italian</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d24">
+                <a href="#">Contact</a>
+                <a href="#">Careers</a>
+                <a href="#">Sign-up</a>
+            </div>
+            <div class="d25">
+                <a href="https://www.twitch.tv/devily66" target="_blank" class="a4" title="Twitch"></a>
+                <a href="https://www.twitch.tv/devily66" target="_blank" class="a5" title="Twitch"></a>
+                <a href="https://www.twitch.tv/devily66" target="_blank" class="a6" title="Twitch"></a>
+                <a href="https://www.twitch.tv/devily66" target="_blank" class="a7" title="Twitch"></a>
+                <a href="https://www.twitch.tv/devily66" target="_blank" class="a8" title="Twitch"></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
