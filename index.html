@@ -16,30 +16,26 @@
 
     <div>
         <header class="header">
-            <div class='d2'>
-                <div class="d3">
-                    <a title="Open Menu" role="button" class="active" href="#" onclick="Menu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+            <div class="nav-links">
+                <div class="col-md-6">
+                    <a href="#about">About</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#services">Services</a>
                 </div>
             </div>
-            <div class="d6">
+            <div class="header-logo">
                 <a href="index.html">
-                    <div class="d61"></div>
-                    <div class="d61 d62"></div>
+                    <div class="logo"></div>
+                    <div class="logo headpos"></div>
                 </a>
             </div>
-            <div class="d7">
-                <div class="d71">
-                    <button title="Open User Menu" role="button" class="userMenu" onclick="UserMenu()">
-                        <nav class="UNavi" role="navigation" title="User Menu">
-                            <!-- TODO unnest anchor tags -->
-                            <a class="" href="/UserMenu1">UserMenu1</a>
-                            <a class="" href="/UserMenu2">UserMenu2</a>
-                        </nav>
-                    </button>
+            <div class="nav-links">
+                <div class="col-md-6">
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="translator">
+                    <div id="google_translator"></div>
                 </div>
             </div>
         </header>
@@ -47,25 +43,25 @@
         <main role="main" class="main">
             <section class="mainSection">
                 <div class="carorow">
-                    <div id="carousel-inner" class="col-md-6 d13">
+                    <div id="carousel-inner" class="col-md-6 caroClass">
                         <!-- Carousel items will be dynamically added here -->
                     </div>
-                    <div id="description" class="col-md-6" ">
+                    <div id="description" class="col-md-6">
                         <h2 id="description-header"></h2>
                         <p id="description-paragraph"></p>
                     </div>
                 </div>
-                <div class="d17" id="button-container">
+                <div class="caroButtons" id="button-container">
                     <!-- Buttons will be dynamically added here -->
                 </div>
             </section>
-            <section class="aboutSection">
+            <section class="aboutSection" id="about">
                 <div class="about">
                     <h1 class="aboutheader">About Shonan Synthesizer Club</h1>
                     <p class="paragraph">This is a paragraph with center-aligned text.</p>
                 </div>
             </section>
-            <section class="servicesSection">
+            <section class="servicesSection" id="services">
                 <h1 class="servicesheader">Services</h1>
                 <div class="container mt-5 mb-5">
                     <div class="row">
@@ -168,7 +164,7 @@
                     </div>
                 </div>
             </section>
-            <section class="contactSection">
+            <section class="contactSection" id="contact">
                 <div class="container mt-5 mb-5">
                     <h1>Contact Me</h1>
                     <form id="contactForm">
@@ -190,25 +186,7 @@
             </section>
         </main>
     <footer role="navigation" title="Footer" class="footerBot">
-        <div class="d20">
-            <div class="d21">
-                <button type="button">
-                    <i></i>
-                    <span>English</span>
-                </button>
-                <div class="d22">
-                    <div class="d23">
-                        <a href="#" target="_self">English</a>
-                        <a href="#" target="_self">German</a>
-                        <a href="#" target="_self">French</a>
-                        <a href="#" target="_self">Dutch</a>
-                        <a href="#" target="_self">Spanish</a>
-                        <a href="#" target="_self">Italian</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d25">
+        <div class="socials">
             <a href="https://www.twitch.tv/devily66" target="_blank" class="a4" title="Twitch"></a>
             <a href="https://www.twitch.tv/devily66" target="_blank" class="a5" title="Twitch"></a>
             <a href="https://www.twitch.tv/devily66" target="_blank" class="a6" title="Twitch"></a>

@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         carouselItem.className = 'caro';
         carouselItem.style.flex = '0 0 100%';
         carouselItem.style.boxSizing = 'border-box';
-        carouselItem.innerHTML = `<div class="d13" style="background: url('${imageUrl}') no-repeat center center; background-position: cover;  "></div>`;
+        carouselItem.innerHTML = `<div class="caroClass" style="background: url('${imageUrl}') no-repeat center center; background-position: cover;  "></div>`;
         carouselInner.appendChild(carouselItem);
 
         const button = document.createElement('button');
@@ -117,3 +117,19 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCarousel();
     }, 5000);
 });
+
+function googleTranslateElementInit() {
+    const defaultLanguage = 'en'; // Default to Japanese
+    const userLanguage = navigator.language || defaultLanguage; // Use user's preferred language or default to Japanese
+    new google.translate.TranslateElement(
+        { pageLanguage: userLanguage },
+        'google_translator'
+    );
+}
+
+// Dynamically load the Google Translate script
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+document.head.appendChild(script);
+
