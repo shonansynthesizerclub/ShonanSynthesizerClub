@@ -7,20 +7,14 @@
     --half-rem-size: calc(var(--base-rem-size) / 2);
     --twice-rem-size: calc(var(--base-rem-size) * 2);
     --section-margin-bottom: calc(var(--base-rem-size) * 4);
-    --header-height: 60px;
+    --header-height: 250px;
     --breadcrumbs-height: calc(var(--base-pixel-size) * 3.5);
     --max-width: 1920px;
-    --standard-color: #fcaf17;
     --color-h: #fff;
     --body-color: #e8e8e8;
     --background-color: #0b0b0b;
     --card-background-color: #000;
-    --border-color: #282828;
     --privacy-banner-height: 0px;
-    --game-header-height: 50px;
-    --standard-grid-gap: calc(var(--base-rem-size) * 2);
-    --image-margin-bottom: inherit;
-    --image-rounding: 0px;
     --image-rounding-static: 16px;
     --image-rounding-static-sm: 8px;
     --image-rounding-static-xs: 4px;
@@ -50,14 +44,11 @@
     --font-size-10: 4.768rem;
     --font-family-std: var(--rsg-font-family-std);
     --font-family-h: var(--rsg-font-family-h);
-    --font-family-h-halloween: nightmar;
     -webkit-font-smoothing: antialiased;
     background-color: var(--background-color,transparent);
     font-family: var(--font-family-std,HelveticaNowText);
     font-size: calc(var(--root-font-size) * 1px);
     font-weight: var(--font-weight-std,400);
-    letter-spacing: var(--letter-spacing-std,-.025em);
-    line-height: var(--line-height-std,1.6);
 }
 
     :root * {
@@ -75,10 +66,6 @@ body {
     background-color: black;
     margin: 0;
 }
-
-/*a {
-    background-color: initial;
-}*/
 
 h1 {
     color: white;
@@ -99,22 +86,18 @@ nav {
 /*#endregion Tag Selectors*/
 
 /*#region Class Selectors*/
-.background {
-    height: 100%;
-    width: 100%;
-}
 
 .header {
     align-items: stretch;
     border: none;
     color: #fff;
     display: grid; /*Sets grid for header bar*/
-    grid-template-columns: 1fr 74px 1fr; /*Sets grid for header bar*/
+    grid-template-columns: 1fr 1fr 1fr; /*Sets grid for header bar*/
     grid-template-rows: 100%; /*Sets grid for header bar*/
     height: var(--header-height);
     justify-content: space-between;
     padding: var(--base-pixel-size) var(--padding-sides); /*Creates centre placement for menu bar*/
-    position: fixed; /*Required to push down other items from the header bar*/
+    /*position: fixed; Required to push down other items from the header bar*/
     top: var(--privacy-banner-height);
     transform: translateY(0); /*Requred to make the header slide away*/
     transition: transform .3s; /*Transition Time for header to slide away*/
@@ -122,7 +105,8 @@ nav {
     z-index: 250;
 }
 
-/*Open Nav Menu*/
+/*#region Open Nav Menu */
+
 .d2 {
     gap: var(--grid-gap-static-sm);
     display: flex;
@@ -130,7 +114,7 @@ nav {
 
 .d3 a {
     cursor: pointer;
-    display: flex;
+    display: none; /*'flex' if dropdown menu is required*/
     flex-flow: column;
     height: 100%;
     justify-content: center;
@@ -157,11 +141,14 @@ a span:last-child {
     transform: translateY(400%);
 }
 
-/*Nav Menu*/
+/*#endregion */
+
+/*#region Nav Menu */
+
 .navi {
     backdrop-filter: blur(40px);
     background-position: 50%;
-    background: rgba(0,0,0,.85);
+    background-color: rgba(0,0,0,.85);
     border: none;
     bottom: 0;
     left: 0;
@@ -245,20 +232,23 @@ a span:last-child {
         width: 100%;
     }
 
-/*Central Logo*/
+/*#endregion */
+
+/*#region Central Logo */
+
 .d6 a {
     display: block;
     height: 100%;
     overflow: hidden;
     position: relative;
-    width: 121%;
+    width: 500px;
 }
 
     .d6 a .d61 {
         background-image: url(../images/ERALogo1.png);
     }
 
-    .d6 a d62, .d6 a .d61 {
+    .d6 a .d62, .d6 a .d61 {
         background-position: 50%;
         background-repeat: no-repeat; /*Stops img repeating*/
         background-size: contain; /*Shrinks img to box*/
@@ -268,17 +258,19 @@ a span:last-child {
         position: absolute;
         top: 0;
         transition: opacity .3s;
-        width: 90px;
+        width: 500px;
     }
 
         .d6 a .d61.d62 {
             opacity: 1;
         }
 
+/*#endregion */
 
-/*User Profile Menu*/
+/*#region User Profile Menu */
+
 .d7 {
-    display: flex;
+    display: none; /*'flex' if user menu is required*/
     justify-content: flex-end;
 }
 
@@ -289,7 +281,9 @@ a span:last-child {
     position: relative;
 }
 
-/*User Nav Menu*/
+/*#endregion */
+
+/*#region User Nav Menu */
 
 .UNavi {
     background: var(--background-color);
@@ -344,200 +338,81 @@ nav.UNavi a {
     z-index: 100;
 }
 
-/*TODO D8 & D9 are slider functionality header disappears*/
-.d8 {
-    backdrop-filter: blur(40px);
-    background: black;
-    height: 100%;
-    top: 0;
-    z-index: -1;
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-.d9 {
-    background-color: #161616;
-    bottom: 0;
-    height: 2px;
-    transition: all .3s;
-}
-
-.d8, .d9 {
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-/*Main Section*/
-
-.main {
-    color: var(--body-color);
-    display: flex;
-    flex: 1;
-    flex-flow: column;
-    margin-top: calc(var(--header-height) + var(--privacy-banner-height));
-    min-height: calc(100vh - var(--header-height));
-    min-height: 100vh;
-    opacity: 1;
-    transition: transform .3s;
-    width: 100%;
-}
-
-.d11 {
-    display: grid;
-}
+/*#endregion */
 
 .mainSection {
     background: var(--card-background-color);
     display: grid;
     grid-template-columns: 100%;
-    justify-content: flex-start;
-    overflow: hidden;
-    position: relative;
-}
-
-    .mainSection footer {
-        gap: var(--grid-gap-static-lg);
-        align-items: flex-end;
-        background: var(--card-background-color);
-        color: #fff;
-        display: grid;
-        height: 100%;
-        padding: var(--grid-gap-static-lg) var(--grid-gap-static-md);
-        width: 100%;
-        z-index: 1;
-    }
-
-
-@media (max-width: 1124px) {
-    .mainSection footer {
-        gap: var(--grid-gap-static-lg);
-        display: grid;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1300px) {
-    .mainSection footer {
-        max-width: unset;
-        padding: var(--grid-gap-static-md) var(--grid-gap-static-md);
-    }
-}
-
-
-.d12 {
-    cursor: pointer;
-    width: 100%;
-}
-
-.d13 {
-    align-items: center;
-    display: flex;
-    transition: transform .3s;
-}
-
-    .d13 a {
-        flex: 1 0 auto;
-        width: 100%;
-    }
-
-.d12.d12a a {
-    pointer-events: none;
-    user-select: none;
-}
-
-.a1 {
-    --aspect-ratio: 16/9;
-    color: #fff;
-    display: flex;
-    flex-flow: column;
-    flex-shrink: 0;
-    justify-content: center;
-    overflow: hidden;
-    opacity: 0;
-    position: relative;
-    transition: opacity 1s;
-    width: 100%;
-}
-
-    .a1.ab {
-        opacity: 1;
-    }
-
-    .a1:before {
-        content: "";
-        display: block;
-        height: 0;
-        padding-bottom: calc(100% / calc(var(--aspect-ratio)));
-    }
-
-.d14 {
-    height: 100%;
-}
-
-.d14, .d15 {
     justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    height: 700px;
 }
 
-.d15 {
-    gap: var(--grid-gap-static-md);
-    align-items: center;
-    align-items: flex-start;
-    display: none;
-    flex-flow: row;
+#description {
+    width: 51%; /* Half width for the description */
+    height: 100%; /* Full height to match the carousel */
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent background for visibility */
+    color: white; /* Text color for contrast */
+    padding: 20px; /* Space around the text */
+    display: flex; /* Flexbox for vertical centering */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center items vertically */
 }
 
-    .d15.Selected {
-        display: flex;
-    }
-
-.d16 {
-    gap: var(--grid-gap-static-xs);
-    display: grid;
-}
-
-    .d16 .d161 {
-        color: var(--tag-color,var(--body-color));
-        font-size: var(--font-size-2);
-        font-weight: 700;
-        line-height: 1.6;
-    }
-
-.h1 {
-}
-
-.d15button {
-    align-self: center;
-    background: transparent;
-    border: 1px solid var(--color-h);
-    border-radius: 0.25rem;
-    color: inherit;
-    color: var(--color-h);
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 700;
-    line-height: 100%;
-    padding: 1rem 3rem;
-    text-transform: uppercase;
-    transition: all .2s ease;
-}
-
-.d15buttona {
-    align-self: flex-start !important;
-    min-width: max-content;
+#description-header {
+    font-size: 24px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
+#description-paragraph {
+    font-size: 16px;
+    color: #555;
+    text-align: Center;
+}
+
+/*#region Carousel Container */
+
+.carorow {
+    display: flex; /* Enable flexbox layout */
+    width: 100%; /* Ensure the row takes full width */
+    height: 100%; /* Set the desired height for the carousel */
+}
+
+#carousel-inner {
+    transition: transform 0.5s ease-in-out;
+    padding-left:0;
+    padding-right:0;
+}
+
+.caro {
+    flex: 0 0 100%; /* Each item takes up 100% of the inner container */
+    height: 100%; /* Ensure full height */
+}
+
+.d13 {
+    width: 100%;
+    height: 100%; /* Match container height */
+    background-size: cover; /* Cover to fill the area */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*#endregion */
+
 .d17 {
     display: flex;
+    justify-content: space-evenly;
 }
 
     .d17 button {
         background: hsla(0,0%,100%,.4);
         border: none;
-        border-radius: 2px;
+        border-radius: 10%;
         cursor: pointer;
-        height: 4px;
+        height: 30%;
         max-width: 4rem;
         outline: none;
         padding: 0;
@@ -545,9 +420,114 @@ nav.UNavi a {
         width: 100%;
     }
 
+.button:hover {
+    background-color: #0056b3;
+}
+
 .button.Selected {
     background: #fff;
 }
+
+#button-container {
+    height: 5%;
+    display: flex; /* Ensure buttons are displayed inline */
+    justify-content: space-evenly; /* Center the buttons */
+    align-items: center; /* Center the buttons vertically */
+    position: absolute; /* Position the container absolutely */
+    bottom: 0; /* Align it to the bottom of the parent container */
+    width: 100%; /* Ensure it takes the full width of the parent */
+}
+
+/*#region About Services */
+
+.aboutSection {
+    background: var(--card-background-color);
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    height: 700px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: flex-start; /* Align header to the top left */
+    padding: 20px; /* Optional padding for spacing */
+    margin-top: 30px; /* Optional margin for spacing */
+    border-top: 2px solid white; /* Add a solid white line at the top */
+    border-bottom: 2px solid white; /* Add a solid white line at the top */
+}
+
+.aboutheader {
+    margin: 0; /* Remove default margin */
+    height: auto; /* Ensure the section takes full height */
+    width: auto;
+}
+
+.paragraph {
+    text-align: center; /* Center-align the text */
+    width: 100%; /* Ensure the paragraph takes full width */
+    align-self: stretch;
+    margin-top: 10px; /* Optional margin for spacing */
+}
+
+
+/*#endregion */
+
+/*#region Services */
+
+.servicesheader {
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    padding-right: 2%;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/*#endregion */
+
+.contactSection {
+    border-top: 2px solid white; /* Add a solid white line at the top */
+}
+
 
 .d17 button:not(:last-child) {
     margin-right: var(--grid-gap-static-xs);
@@ -635,23 +615,6 @@ footer.footerBot {
         transition: all .3s ease-in-out,opacity .1s ease-out;
     }
 
-.d23 {
-    background: var(--background-color);
-    border-radius: var(--image-rounding-static-xs);
-    color: var(--body-color);
-    display: flex;
-    flex-flow: column;
-    overflow: hidden;
-}
-
-    .d23, .d23 a {
-        min-width: max-content;
-    }
-
-        .d23 a {
-            padding: var(--grid-gap-static-xs) var(--grid-gap-static-sm);
-        }
-
 
 footer.footerBot .d24 {
     justify-content: flex-start;
@@ -667,6 +630,8 @@ footer.footerBot .d25 {
     justify-content: flex-end;
     order: 3;
 }
+
+/*#region Socials */
 
 .d25 {
     gap: var(--grid-gap-static-md);
@@ -701,56 +666,4 @@ footer.footerBot .d25 {
         width: calc(var(--base-pixel-size) * 2);
     }
 
-/*#endregion Class Selectors*/
-
-/*#region Main Section grid*/
-/*.d18 {
-    --grid-gap-dynamic: var(--grid-gap-static-xl);
-    gap: var(--grid-gap-dynamic);
-    display: grid;
-    grid-template-columns: repeat(var(--grid-num-columns,1),minmax(0,1fr));
-    margin: 0 auto;
-    max-width: var(--max-width);
-    padding: var(--padding-top-bottom) var(--padding-sides);
-    width: 100%;
-}
-
-.s1 {
-    display: flex;
-    flex-flow: column;
-    z-index: 8;
-}
-
-.h2 {
-    --line-height-h: 1.3;
-    font-family: var(--font-family-h);
-    font-size: var(--font-size-5);
-    font-weight: var(--font-weight-h);
-    margin: 0 0 1.5rem;
-}
-
-@media (min-width: 1024px) {
-    .d19 {
-        grid-template-columns: repeat(6,minmax(0,1fr));
-    }
-} 
-
-@media (min-width: 768px) {
-    .d19 {
-        grid-template-columns: repeat(4,minmax(0,1fr));
-    }
-}
-
-@media (min-width: 0px) {
-    .d19 {
-        grid-template-columns: repeat(1,minmax(0,1fr));
-    }
-}
-
-
-.d19 {
-    gap: var(--standard-grid-gap);
-    display: grid;
-    margin-bottom: var(--grid-gap-static-md);
-}*/
-/*#region Main Section grid*/
+/*#endregion */
